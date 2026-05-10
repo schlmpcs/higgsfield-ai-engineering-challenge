@@ -1,0 +1,89 @@
+{
+  "scenarios": [
+    {
+      "name": "rich_user_ranking",
+      "user_id": "fixture-rich-1",
+      "turns": [
+        {"session_id": "rich-s1", "messages": [{"role": "user", "content": "I just moved from NYC to Berlin last month. Loving it so far. The U-Bahn is way better than the MTA."}, {"role": "assistant", "content": "Welcome to Berlin!"}], "timestamp": "2025-03-10T10:00:00Z"},
+        {"session_id": "rich-s1", "messages": [{"role": "user", "content": "Walking Biscuit, my 3-year-old labrador, in Tiergarten this morning. He's exhausted now."}, {"role": "assistant", "content": "Sounds great!"}], "timestamp": "2025-03-11T09:00:00Z"},
+        {"session_id": "rich-s2", "messages": [{"role": "user", "content": "Quick heads up: I'm vegetarian and allergic to shellfish. Just so you don't suggest sushi places."}, {"role": "assistant", "content": "Got it."}], "timestamp": "2025-03-12T18:00:00Z"},
+        {"session_id": "rich-s2", "messages": [{"role": "user", "content": "Started a new job at IDEO as a senior product designer last week. The team is really collaborative."}, {"role": "assistant", "content": "Congrats!"}], "timestamp": "2025-03-13T14:00:00Z"},
+        {"session_id": "rich-s3", "messages": [{"role": "user", "content": "Spent the weekend at the climbing gym with my partner Mei. We're working on a 6c route."}, {"role": "assistant", "content": "Nice!"}], "timestamp": "2025-03-15T20:00:00Z"},
+        {"session_id": "rich-s3", "messages": [{"role": "user", "content": "Honestly TypeScript's type system is the best part of modern web dev. I keep finding new ways to express constraints precisely."}, {"role": "assistant", "content": "Powerful indeed."}], "timestamp": "2025-03-16T11:00:00Z"},
+        {"session_id": "rich-s3", "messages": [{"role": "user", "content": "Please keep your answers concise and direct - I don't need long preambles."}, {"role": "assistant", "content": "Will do."}], "timestamp": "2025-03-16T11:30:00Z"},
+        {"session_id": "rich-s4", "messages": [{"role": "user", "content": "Reading Pachinko by Min Jin Lee right now. Pretty into it."}, {"role": "assistant", "content": "Great book."}], "timestamp": "2025-03-18T22:00:00Z"},
+        {"session_id": "rich-s4", "messages": [{"role": "user", "content": "I've been learning German for about six months now, A2 level. Still struggling with der/die/das."}, {"role": "assistant", "content": "Common pain."}], "timestamp": "2025-03-19T08:00:00Z"},
+        {"session_id": "rich-s4", "messages": [{"role": "user", "content": "I drink way too much coffee. Probably four cups before noon."}, {"role": "assistant", "content": "Hah."}], "timestamp": "2025-03-19T09:00:00Z"},
+        {"session_id": "rich-s5", "messages": [{"role": "user", "content": "Mei plays jazz piano, she's classically trained. We have a small upright in the living room."}, {"role": "assistant", "content": "Cool."}], "timestamp": "2025-03-20T19:00:00Z"},
+        {"session_id": "rich-s5", "messages": [{"role": "user", "content": "We're flying to Lisbon for a week in April. Mei found a great Airbnb in Alfama."}, {"role": "assistant", "content": "Sounds wonderful."}], "timestamp": "2025-03-21T15:00:00Z"},
+        {"session_id": "rich-s6", "messages": [{"role": "user", "content": "Bought an iPhone 15 Pro Max yesterday. Coming from a 12, the camera upgrade is huge."}, {"role": "assistant", "content": "Nice upgrade."}], "timestamp": "2025-03-22T10:00:00Z"},
+        {"session_id": "rich-s6", "messages": [{"role": "user", "content": "I prefer dark mode for everything. Bright UIs hurt my eyes after a long day."}, {"role": "assistant", "content": "Will adjust."}], "timestamp": "2025-03-22T11:00:00Z"},
+        {"session_id": "rich-s6", "messages": [{"role": "user", "content": "We don't have kids and aren't planning to. Mei and I are happy as we are."}, {"role": "assistant", "content": "Got it."}], "timestamp": "2025-03-23T20:00:00Z"},
+        {"session_id": "rich-s7", "messages": [{"role": "user", "content": "I get migraines about once a month, usually weather-triggered. Sumatriptan helps."}, {"role": "assistant", "content": "Sorry to hear."}], "timestamp": "2025-03-24T16:00:00Z"},
+        {"session_id": "rich-s7", "messages": [{"role": "user", "content": "Big into electronic music - especially Berlin's techno scene. Berghain is on my list once I work up the nerve."}, {"role": "assistant", "content": "Iconic."}], "timestamp": "2025-03-25T22:00:00Z"},
+        {"session_id": "rich-s8", "messages": [{"role": "user", "content": "Worked at Stripe before IDEO, on the payments infra team for three years."}, {"role": "assistant", "content": "Solid background."}], "timestamp": "2025-03-26T11:00:00Z"},
+        {"session_id": "rich-s8", "messages": [{"role": "user", "content": "I'm 34, born in Vancouver, parents still live there."}, {"role": "assistant", "content": "Got it."}], "timestamp": "2025-03-27T09:00:00Z"},
+        {"session_id": "rich-s9", "messages": [{"role": "user", "content": "Trying to cut down on screen time. Bought a Kindle so I can read without notifications."}, {"role": "assistant", "content": "Smart."}], "timestamp": "2025-03-28T20:00:00Z"}
+      ],
+      "probes": [
+        {"session_id": "rich-probe-1", "query": "Which European capital city are they currently in?", "expected_facts": ["berlin"], "max_tokens": 256, "tag": "semantic_only"},
+        {"session_id": "rich-probe-2", "query": "What kind of dog do they have?", "expected_facts": ["labrador"], "max_tokens": 256, "tag": "keyword"},
+        {"session_id": "rich-probe-3", "query": "What restaurants would they enjoy?", "expected_facts": ["vegetarian"], "max_tokens": 256, "tag": "semantic_lite"},
+        {"session_id": "rich-probe-4", "query": "What instrument is played at their home?", "expected_facts": ["piano"], "max_tokens": 256, "tag": "semantic_only"},
+        {"session_id": "rich-probe-5", "query": "Does the user with a labrador have any food allergies?", "expected_facts": ["shellfish"], "max_tokens": 256, "tag": "multi_hop"},
+        {"session_id": "rich-probe-6", "query": "What programming language do they prefer?", "expected_facts": ["typescript"], "max_tokens": 256, "tag": "keyword"},
+        {"session_id": "rich-probe-7", "query": "How should responses be formatted?", "expected_facts": ["concise"], "max_tokens": 256, "tag": "semantic_only"},
+        {"session_id": "rich-probe-8", "query": "What book are they reading right now?", "expected_facts": ["pachinko"], "max_tokens": 256, "tag": "keyword"},
+        {"session_id": "rich-probe-9", "query": "Are they planning a vacation soon?", "expected_facts": ["lisbon"], "max_tokens": 256, "tag": "semantic_only"},
+        {"session_id": "rich-probe-10", "query": "What medical issues should I be aware of?", "expected_facts": ["migraine"], "max_tokens": 256, "tag": "semantic_only"},
+        {"session_id": "rich-probe-11", "query": "What's their stance on having children?", "expected_facts": ["no", "without", "not", "without kids", "no kids", "don't"], "any_of_expected": true, "max_tokens": 256, "tag": "semantic_only"},
+        {"session_id": "rich-probe-12", "query": "Where did they work before IDEO?", "expected_facts": ["stripe"], "max_tokens": 256, "tag": "keyword"},
+        {"session_id": "rich-probe-13", "query": "What's their favorite color?", "expected_facts": [], "must_not_contain": ["red", "blue", "green", "yellow"], "max_tokens": 256, "tag": "noise"},
+        {"session_id": "rich-probe-14", "query": "Do they have any siblings?", "expected_facts": [], "must_not_contain": ["brother", "sister", "sibling"], "max_tokens": 256, "tag": "noise"}
+      ]
+    },
+    {
+      "name": "implicit_extraction",
+      "user_id": "fixture-implicit-1",
+      "turns": [
+        {"session_id": "imp-s1", "messages": [{"role": "user", "content": "Walking Biscuit through the park this morning, beautiful sunrise."}, {"role": "assistant", "content": "Lovely!"}], "timestamp": "2025-04-01T07:00:00Z"},
+        {"session_id": "imp-s1", "messages": [{"role": "user", "content": "Mei and I are planning a trip to Patagonia in November."}, {"role": "assistant", "content": "Sounds amazing!"}], "timestamp": "2025-04-02T20:00:00Z"},
+        {"session_id": "imp-s1", "messages": [{"role": "user", "content": "My commute is killing me - an hour each way to the office these days."}, {"role": "assistant", "content": "Rough."}], "timestamp": "2025-04-03T19:00:00Z"}
+      ],
+      "probes": [
+        {"session_id": "imp-probe-1", "query": "Does the user have a pet?", "expected_facts": ["biscuit"], "max_tokens": 512, "tag": "implicit"},
+        {"session_id": "imp-probe-2", "query": "Are they single?", "expected_facts": ["mei"], "max_tokens": 512, "tag": "implicit_semantic"},
+        {"session_id": "imp-probe-3", "query": "Do they work from home?", "expected_facts": ["commute", "office"], "any_of_expected": true, "max_tokens": 512, "tag": "implicit_semantic"}
+      ]
+    },
+    {
+      "name": "noise_resistance",
+      "user_id": "fixture-noise-1",
+      "turns": [
+        {"session_id": "nz-s1", "messages": [{"role": "user", "content": "I'm working on a Django app for tracking gym workouts. Just deployed v0.2 today."}, {"role": "assistant", "content": "Cool project."}], "timestamp": "2025-02-01T10:00:00Z"},
+        {"session_id": "nz-s1", "messages": [{"role": "user", "content": "I live in Toronto and work at a fintech startup."}, {"role": "assistant", "content": "Nice!"}], "timestamp": "2025-02-02T10:00:00Z"}
+      ],
+      "probes": [
+        {"session_id": "nz-probe-1", "query": "What's their stance on climate change?", "expected_facts": [], "must_not_contain": ["climate", "environmental", "carbon"], "max_tokens": 512, "tag": "noise"},
+        {"session_id": "nz-probe-2", "query": "Have they been to Antarctica?", "expected_facts": [], "must_not_contain": ["antarctica", "south pole", "ice"], "max_tokens": 512, "tag": "noise"},
+        {"session_id": "nz-probe-3", "query": "What city do they live in?", "expected_facts": ["toronto"], "max_tokens": 512, "tag": "keyword"},
+        {"session_id": "nz-probe-4", "query": "Tell me about their projects.", "expected_facts": ["django", "gym"], "any_of_expected": true, "max_tokens": 512, "tag": "semantic_lite"}
+      ]
+    },
+    {
+      "name": "fact_evolution",
+      "user_id": "fixture-evolution-1",
+      "turns": [
+        {"session_id": "evo-s1", "messages": [{"role": "user", "content": "I work at Stripe as a senior engineer on the payments infra team. Been here about three years."}, {"role": "assistant", "content": "Cool background!"}], "timestamp": "2025-01-15T10:00:00Z"},
+        {"session_id": "evo-s2", "messages": [{"role": "user", "content": "I currently live in San Francisco."}, {"role": "assistant", "content": "Nice city."}], "timestamp": "2025-02-10T11:00:00Z"},
+        {"session_id": "evo-s3", "messages": [{"role": "user", "content": "Big update — I just joined Notion as a Product Manager last week. Excited about the new role."}, {"role": "assistant", "content": "Congrats on the move!"}], "timestamp": "2025-03-15T09:00:00Z"},
+        {"session_id": "evo-s4", "messages": [{"role": "user", "content": "Just moved from San Francisco to Brooklyn last weekend. Apartment is much smaller but I love the neighborhood."}, {"role": "assistant", "content": "Welcome to NY!"}], "timestamp": "2025-04-01T18:00:00Z"}
+      ],
+      "probes": [
+        {"session_id": "evo-probe-1", "query": "Where does this user work currently?", "expected_facts": ["notion"], "max_tokens": 256, "tag": "fact_evolution"},
+        {"session_id": "evo-probe-2", "query": "What city do they currently live in?", "expected_facts": ["brooklyn"], "max_tokens": 256, "tag": "fact_evolution"},
+        {"session_id": "evo-probe-3", "query": "What's their current job?", "expected_facts": ["product manager", "pm", "notion"], "any_of_expected": true, "max_tokens": 256, "tag": "fact_evolution"}
+      ]
+    }
+  ]
+}

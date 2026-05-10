@@ -1,0 +1,9 @@
+[project]
+name = "memory-service"
+version = "0.1.0"
+description = "Memory service for AI agents"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

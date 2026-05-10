@@ -1,0 +1,16 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.30.0
+pgvector==0.3.6
+pydantic==2.10.4
+pydantic-settings==2.7.1
+anthropic==0.42.0
+openai==1.59.3
+python-dotenv==1.0.1
+# Iter 5 (review fix P2.2): removed unused runtime deps:
+#   tiktoken==0.8.0 — chars/4 approximation in src/recall.py replaces it; saved ~6MB model load
+#   rank-bm25==0.2.2 — never imported (Postgres FTS is the keyword channel)
+#   numpy==1.26.4 — never imported (pgvector handles cosine in-DB)
+#   httpx — moved to requirements-test.txt (only used by tests/)
+# pytest deps moved to requirements-test.txt to keep the runtime image lean.

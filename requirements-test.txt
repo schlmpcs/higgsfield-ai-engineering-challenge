@@ -1,0 +1,6 @@
+# Test-only dependencies. Not installed into the runtime container image —
+# install separately when running the integration tests against a running
+# service (`pip install -r requirements-test.txt`).
+httpx==0.28.1
+pytest==8.3.4
+pytest-asyncio==0.25.1
